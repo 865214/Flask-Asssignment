@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1> Welcome to Form Page</h1>
+    <form action="/login" method="post">
+      <label for="name">Name: </label>
+      <input class = "name" type="text" name="name" value="">
+      <input type="submit" value="Submit">
+      
+    </form>
+    {% block content %}
+    
+    {% endblock  %}
+    
+    
+  </body>
+</html>

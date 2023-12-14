@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Counter</title>
+</head>
+<body>
+    <h1>Real-time Counter</h1>
+    <p id="counter">Counter Value: Loading...</p>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        socket.on('update_counter', function(data) {
+            document.getElementById('counter').innerText = 'Counter Value: ' + data.value;
+        });
+    </script>
+</body>
+</html>
